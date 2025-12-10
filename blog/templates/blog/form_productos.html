@@ -1,0 +1,20 @@
+{% extends "blog/inicio.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    {% load static %}
+    {% block contenidoQueCambia %}
+       <h1>Bienvenido estos son nuestros productos disponibles</h1>
+       {% for Producto in productos %}
+         <h3>{{productos.nombre_prod}}</h3>
+        {% empty %}
+        <p>No hay productos</p>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>
