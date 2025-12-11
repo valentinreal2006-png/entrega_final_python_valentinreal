@@ -10,6 +10,11 @@
     {% load static %}
     {% block contenidoQueCambia %}
        <h1>Bienvenido estos son nuestros productos disponibles</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
        {% for Producto in productos %}
          <h3>{{productos.nombre_prod}}</h3>
         {% empty %}

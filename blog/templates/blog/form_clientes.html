@@ -11,6 +11,11 @@
     {% block contenidoQueCambia %}
        <h1>CLIENTES</h1>
        <h1>Todo bien?</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
     {% endblock %}
 </body>
 </html>

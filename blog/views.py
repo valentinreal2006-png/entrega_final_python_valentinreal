@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ClienteForm, ProductoForm, CompraForm, BuscarProductoForm
-from .models import Producto
+from blog.models import Producto
 
 def inicio(request):
     """Vista simple para la página de inicio."""
