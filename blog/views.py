@@ -46,3 +46,13 @@ def buscar_producto(request):
 
     form = BuscarProductoForm()
     return render(request, "blog/buscar_producto.html", {"form": form, "productos": productos})
+
+def home(request):
+    return render(request, "home.html")
+
+def page_list(request):
+    return render(request, "blog/page_list.html")
+
+def page_detail(request, page_id):
+    return render(request, "blog/page_detail.html", {"page_id": page_id})
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Páginas</h1>
+
+{% if pages %}
+    {% for page in pages %}
+        <h2>{{ page.titulo }}</h2>
+        <a href="/pages/{{ page.id }}/">Leer más</a>
+    {% endfor %}
+{% else %}
+    <p>No hay páginas aún</p>
+{% endif %}
+
+<a href="/">Volver</a>
+
+</body>
+</html>
