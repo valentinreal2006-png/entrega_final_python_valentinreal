@@ -1,21 +1,25 @@
 {% extends "blog/inicio.html" %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
-</head>
-<body>
-    {% load static %}
-    {% block contenidoQueCambia %}
-       <h1>CLIENTES</h1>
-       <h1>Todo bien?</h1>
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Registro de clientes</h1>
+
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Guardar</button>
+    <button type="submit">Guardar cliente</button>
 </form>
-    {% endblock %}
-</body>
-</html>
+
+<hr>
+
+{% for cliente in clientes %}
+    <h2>Nombre: {{ cliente.nombre }}</h2>
+    <h3>Teléfono: {{ cliente.telefono }}</h3>
+    <h3>Email: {{ cliente.email }}</h3>
+    <hr>
+{% empty %}
+    <p>No hay clientes cargados</p>
+{% endfor %}
+
+{% endblock %}

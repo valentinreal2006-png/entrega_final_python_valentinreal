@@ -1,22 +1,22 @@
 from django import forms
-from blog.models import Cliente, Producto, Compra
+from blog.models import cliente, producto, Compra
 
 class ClienteForm(forms.ModelForm):
     class Meta:
-        model = Cliente
+        model = cliente
         fields = ['nombre', 'telefono', 'email']
 
 
 class ProductoForm(forms.ModelForm):
     class Meta:
-        model = Producto
+        model = producto
         fields = ['nombre_prod', 'stock', 'precio']
 
 
 class CompraForm(forms.ModelForm):
     class Meta:
         model = Compra
-        fields = ['cliente', 'producto']
+        fields = ['cliente', 'producto', 'cantidad']
 
 
 # FORMULARIO DE BÚSQUEDA
